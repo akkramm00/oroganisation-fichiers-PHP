@@ -8,64 +8,27 @@
     <title>Ma boutique en ligne</title>
   </head>
   <body>
-    <header>
-      <h1>
-        <?php
-        if($language === 'fr')
-        {
-          echo 'Bienvenue !';
-        } else {
-          echo 'Welcome !' ;        
-        }
-        ?>
-      </h1>
-    </header>
-    <div>
-      <h2>
-        <?php
-        if($language === 'fr')
-        {
-          echo 'Nos articles' ;
-        }else{
-          echo 'Our products !';
-        }
-        ?>:
-      </h2>
       <?php
-        function loadArticles (): array 
-          {
-            return [
-              [
-              'Name' => 'Carte mère' ,
-              'Price'=> 120 ,
-              'Description' => 'Une super carte mère !',
-              ],
-              [
-              'Name' => 'Carte graphique',
-              'Price'=> 500 ,
-              'Description' => 'A vous le 4K', 
-              ],
-              [
-              'Name' => 'Barrettes de RAM',
-              'Price'=> 150 ,
-              'Description' => '16Go DDR4',
-              ],
-            ];
-          }
-
-          foreach (loadArticles() as $article)
-            {
-              echo '<div>
-                     <h3> '. $article['Name']. ' - '. $article['Price'].'€</h3>
-                     <p>'.$article['Description'].'</p>
-                    </div>';
-            }
+        $headerTitle = 'Test' ;
+        require 'front/header.php' ;
       ?>
-    </div>
+  <div>
+    <h2>
     <?php
-?> 
-
-    
+      $pageTitle = 'Page de test';
+      echo $pageTitle; 
+    ?>
+    </h2>
+  <?php
+    for ($i = 0; $i < 3 ; $i++ ) 
+      {
+        $title = 'Article Test' .$i;
+        $price = 30 ;
+        $description = 'Une description test ' ;
+        require 'front/article.php' ;
+      }
+  ?>
+  </div>
   <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
   </body>
 </html>
