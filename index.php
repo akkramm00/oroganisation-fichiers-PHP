@@ -1,7 +1,8 @@
 <?php
- $language = 'fr';
-?>
+ require 'back/articles.php';
+require 'back/language.php' ;
 
+?>
 
 <html>
   <head>
