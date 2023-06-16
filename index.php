@@ -1,31 +1,31 @@
 <?php
  require 'back/articles.php';
-require 'back/language.php' ;
-
+ require 'back/language.php' ;
+ $language = 'en';
+ $articles = loadArticles();
+ loadLanguage($language);
 ?>
-
 <html>
-  <head>
+<head>
     <title>Ma boutique en ligne</title>
-  </head>
-  <body>
+</head>
+ <body>
       <?php
-        $headerTitle = 'Test' ;
+        $headerTitle = TEXT_WELCOME;
         require 'front/header.php' ;
       ?>
   <div>
     <h2>
     <?php
-      $pageTitle = 'Page de test';
-      echo $pageTitle; 
+      echo TEXT_ARTICLES; 
     ?>
     </h2>
   <?php
-    for ($i = 0; $i < 3 ; $i++ ) 
+    foreach ($articles as $article) 
       {
-        $title = 'Article Test' .$i;
-        $price = 30 ;
-        $description = 'Une description test ' ;
+        $title = $article['name'];
+        $price = $article['price'];
+        $description =$article['description'];
         require 'front/article.php' ;
       }
   ?>

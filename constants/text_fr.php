@@ -1,4 +1,4 @@
 <?php
-define('TEXT_WELCOME'? 'Bienvenue');
-define('TEXT8ARTICLES' ? 'Nos articles');
+define('TEXT_WELCOME', 'Bienvenue');
+define('TEXT_ARTICLES' , 'Nos articles');
 ?>
